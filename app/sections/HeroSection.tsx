@@ -25,8 +25,7 @@ export default function HeroSection() {
 
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-primary leading-tight max-w-[90%] md:max-w-none mx-auto md:mx-0">
               Aspiring Full Stack Developer building modern
-              <br className="hidden md:block" /> and scalable web & mobile
-              experiences.
+              <br className="hidden md:block" /> and web & mobile experiences.
             </h2>
 
             <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-[450px]">
