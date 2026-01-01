@@ -4,6 +4,7 @@ import { Download, MessageSquare, MapPin, Code2 } from "lucide-react";
 import Image from "next/image";
 import resumeImage from "@/assets/images/resume.jpg";
 import { SiFlutter, SiPython, SiTypescript } from "react-icons/si";
+import { Highlighter } from "@/components/ui/highlighter";
 
 export default function HeroSection() {
   return (
@@ -20,7 +21,12 @@ export default function HeroSection() {
 
           <div className="space-y-4">
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
-              Hi, I'm <span className="text-foreground">Josuan.</span>
+              Hi, I'm{" "}
+              <span className="text-foreground">
+                <Highlighter action="box" color="#6e56cf">
+                  Josuan.
+                </Highlighter>
+              </span>
             </h1>
 
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-primary leading-tight max-w-[90%] md:max-w-none mx-auto md:mx-0">
