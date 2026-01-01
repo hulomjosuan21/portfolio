@@ -18,7 +18,7 @@ export default function Page() {
   ];
 
   return (
-    <div className="relative scroll-smooth min-h-[200vh]">
+    <div className="relative scroll-smooth">
       <Header />
       <main>
         <section id="hero">
