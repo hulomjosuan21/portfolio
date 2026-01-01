@@ -13,7 +13,7 @@ export default function Page() {
     { label: "Capstone", href: "#projects", icon: Code2 },
     { label: "Skills", href: "#skills", icon: Cpu },
     { label: "Achievements", href: "#awards", icon: Trophy },
-    { label: "GitHub", href: "https://github.com/yourusername", icon: Github },
+    { label: "GitHub", href: "https://github.com/hulomjosuan21", icon: Github },
     { label: "Contact", href: "mailto:hulomjosuan@gmail.com", icon: Mail },
   ];
 
