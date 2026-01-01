@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={`${dmSans.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >

@@ -9,7 +9,6 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-x-hidden py-16 md:py-0">
       <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-12">
-        {/* LEFT CONTENT: Responsive typography and alignment */}
         <div className="flex-1 space-y-6 md:space-y-8 animate-in fade-in slide-in-from-left duration-700 z-10 text-center md:text-left flex flex-col items-center md:items-start">
           <Badge
             variant="secondary"
@@ -31,9 +30,9 @@ export default function HeroSection() {
             </h2>
 
             <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-[450px]">
-              Graduating IT student focused on React.js frontends,
-              Python-powered backends, Flutter mobile applications, and solid
-              SQL database design.
+              Graduating IT student focused on React.js frontends, Python
+              backends, Flutter mobile apps, and database development primarily
+              using ORM-based workflows.
             </p>
           </div>
 
@@ -56,9 +55,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* RIGHT CONTENT: Scaling image and labels */}
         <div className="flex-1 relative animate-in fade-in zoom-in duration-1000 flex justify-center w-full max-w-[300px] sm:max-w-[400px] md:max-w-none">
-          {/* Background Glow - Constrained to prevent horizontal scroll */}
           <div className="absolute inset-0 bg-primary/20 rounded-full blur-[80px] md:blur-3xl opacity-50" />
 
           <div className="relative z-10 w-full aspect-square max-w-[280px] sm:max-w-[350px] lg:max-w-[450px]">
@@ -72,20 +69,22 @@ export default function HeroSection() {
               />
             </div>
 
-            <div className="absolute top-2 -left-12 sm:top-6 sm:-left-18 bg-background/90 backdrop-blur-md border border-border p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl shadow-xl z-20">
+            <div className="absolute top-2 -left-8 sm:top-4 sm:-left-12 bg-background/90 backdrop-blur-md border border-border p-1.5 sm:p-2 rounded-lg sm:rounded-xl shadow-lg z-20">
               <div className="flex flex-col items-center">
-                <span className="text-[10px] sm:text-xs font-bold text-primary mb-2 uppercase tracking-wider">
+                <span className="text-[8px] sm:text-[10px] font-bold text-primary mb-1.5 uppercase tracking-wider">
                   Stack
                 </span>
-                <div className="flex gap-2 sm:gap-3">
-                  <div className="size-7 sm:size-9 flex items-center justify-center bg-[#3178C6]/10 rounded-lg border border-[#3178C6]/20">
-                    <SiTypescript className="size-4 sm:size-5 text-[#3178C6]" />
+                <div className="flex gap-1.5 sm:gap-2">
+                  <div className="size-5 sm:size-7 flex items-center justify-center bg-white rounded-md border border-slate-200 shadow-sm">
+                    <SiTypescript className="size-3 sm:size-4 text-[#3178C6]" />
                   </div>
-                  <div className="size-7 sm:size-9 flex items-center justify-center bg-[#3776AB]/10 rounded-lg border border-[#3776AB]/20">
-                    <SiPython className="size-4 sm:size-5 text-[#3776AB]" />
+
+                  <div className="size-5 sm:size-7 flex items-center justify-center bg-white rounded-md border border-slate-200 shadow-sm">
+                    <SiPython className="size-3 sm:size-4 text-[#3776AB]" />
                   </div>
-                  <div className="size-7 sm:size-9 flex items-center justify-center bg-[#02569B]/10 rounded-lg border border-[#02569B]/20">
-                    <SiFlutter className="size-4 sm:size-5 text-[#02569B]" />
+
+                  <div className="size-5 sm:size-7 flex items-center justify-center bg-white rounded-md border border-slate-200 shadow-sm">
+                    <SiFlutter className="size-3 sm:size-4 text-[#02569B]" />
                   </div>
                 </div>
               </div>
