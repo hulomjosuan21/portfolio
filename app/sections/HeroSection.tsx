@@ -5,8 +5,34 @@ import Image from "next/image";
 import resumeImage from "@/assets/images/resume.jpg";
 import { SiFlutter, SiPython, SiTypescript } from "react-icons/si";
 import { Highlighter } from "@/components/ui/highlighter";
-
+import { motion, cubicBezier } from "framer-motion";
+const floatAnimation = (delay: number = 0) => ({
+  initial: { y: 0 },
+  animate: {
+    y: [-10, 10, -10],
+    transition: {
+      duration: 5,
+      repeat: Infinity,
+      repeatType: "reverse" as const,
+      ease: "easeInOut",
+      delay: delay,
+    },
+  },
+});
 export default function HeroSection() {
+  const floatAnimation = (delay: number = 0) => ({
+    initial: { y: 0 },
+    animate: {
+      y: [-10, 10, -10],
+      transition: {
+        duration: 5,
+        repeat: Infinity,
+        repeatType: "reverse" as const, // Cast the union type
+        ease: cubicBezier(0.45, 0, 0.55, 1), // This returns a valid Easing function
+        delay: delay,
+      },
+    },
+  });
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-x-hidden py-16 md:py-0">
       <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-12">
@@ -63,7 +89,11 @@ export default function HeroSection() {
         <div className="flex-1 relative animate-in fade-in zoom-in duration-1000 flex justify-center w-full max-w-[300px] sm:max-w-[400px] md:max-w-none">
           <div className="absolute inset-0 bg-primary/20 rounded-full blur-[80px] md:blur-3xl opacity-50" />
 
-          <div className="relative z-10 w-full aspect-square max-w-[280px] sm:max-w-[350px] lg:max-w-[450px]">
+          {/* Main Image Container with subtle float */}
+          <motion.div
+            {...floatAnimation(0)}
+            className="relative z-10 w-full aspect-square max-w-[280px] sm:max-w-[350px] lg:max-w-[450px]"
+          >
             <div className="relative h-full w-full rounded-3xl overflow-hidden border border-primary/20 shadow-2xl">
               <Image
                 src={resumeImage}
@@ -74,7 +104,11 @@ export default function HeroSection() {
               />
             </div>
 
-            <div className="absolute top-2 -left-8 sm:top-4 sm:-left-12 bg-background/90 backdrop-blur-md border border-border p-1.5 sm:p-2 rounded-lg sm:rounded-xl shadow-lg z-20">
+            {/* Floating Stack Label - Offset delay for organic feel */}
+            <motion.div
+              {...floatAnimation(0.5)}
+              className="absolute top-2 -left-8 sm:top-4 sm:-left-12 bg-background/90 backdrop-blur-md border border-border p-1.5 sm:p-2 rounded-lg sm:rounded-xl shadow-lg z-20"
+            >
               <div className="flex flex-col items-center">
                 <span className="text-[8px] sm:text-[10px] font-bold text-primary mb-1.5 uppercase tracking-wider">
                   Stack
@@ -83,19 +117,21 @@ export default function HeroSection() {
                   <div className="size-5 sm:size-7 flex items-center justify-center bg-white rounded-md border border-slate-200 shadow-sm">
                     <SiTypescript className="size-3 sm:size-4 text-[#3178C6]" />
                   </div>
-
                   <div className="size-5 sm:size-7 flex items-center justify-center bg-white rounded-md border border-slate-200 shadow-sm">
                     <SiPython className="size-3 sm:size-4 text-[#3776AB]" />
                   </div>
-
                   <div className="size-5 sm:size-7 flex items-center justify-center bg-white rounded-md border border-slate-200 shadow-sm">
                     <SiFlutter className="size-3 sm:size-4 text-[#02569B]" />
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="absolute -top-3 -right-3 sm:-top-6 sm:-right-6 bg-background/90 backdrop-blur-md border border-border p-2 sm:p-4 rounded-xl sm:rounded-2xl shadow-xl z-20">
+            {/* Floating Graduation Label */}
+            <motion.div
+              {...floatAnimation(1.2)}
+              className="absolute -top-3 -right-3 sm:-top-6 sm:-right-6 bg-background/90 backdrop-blur-md border border-border p-2 sm:p-4 rounded-xl sm:rounded-2xl shadow-xl z-20"
+            >
               <div className="flex items-center gap-2 sm:gap-3">
                 <div className="size-6 sm:size-8 bg-primary/20 rounded-lg flex items-center justify-center text-primary font-bold text-[10px] sm:text-xs">
                   J
@@ -109,9 +145,13 @@ export default function HeroSection() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="absolute -bottom-3 -left-3 sm:-bottom-6 sm:-left-6 bg-background/90 backdrop-blur-md border border-border p-2 sm:p-4 rounded-xl sm:rounded-2xl shadow-xl z-20">
+            {/* Floating Availability Label */}
+            <motion.div
+              {...floatAnimation(0.8)}
+              className="absolute -bottom-3 -left-3 sm:-bottom-6 sm:-left-6 bg-background/90 backdrop-blur-md border border-border p-2 sm:p-4 rounded-xl sm:rounded-2xl shadow-xl z-20"
+            >
               <div className="flex items-center gap-2">
                 <div className="size-1.5 sm:size-2 rounded-full bg-primary animate-pulse" />
                 <p className="text-[10px] sm:text-sm font-medium">
@@ -121,8 +161,8 @@ export default function HeroSection() {
               <p className="text-[8px] sm:text-[10px] text-muted-foreground mt-0.5 sm:mt-1 ml-3 sm:ml-4 whitespace-nowrap">
                 Full Stack Development
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
