@@ -68,15 +68,11 @@ export default function HeroSection() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <Button
-              size="lg"
-              className="rounded-full px-8 bg-primary text-primary-foreground w-full sm:w-auto"
-            >
+            <Button className="rounded-full px-8 bg-primary text-primary-foreground w-full sm:w-auto">
               <Download className="mr-2 size-4" />
               Download Resume
             </Button>
             <Button
-              size="lg"
               variant="outline"
               className="rounded-full px-8 border-primary text-primary w-full sm:w-auto"
             >

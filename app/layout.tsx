@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
 });
-
 export const metadata: Metadata = {
   title: "Josuan",
   description: "Josuan's Portfolio Website",
@@ -20,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${dmSans.variable} antialiased`}>
+      <body className={`${montserrat.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

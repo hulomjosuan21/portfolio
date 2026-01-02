@@ -6,6 +6,8 @@ import HeroSection from "./sections/HeroSection";
 import Header from "@/components/Header";
 import FeatureProjectSection from "./sections/FeatureProjectSection";
 import SkillSection from "./sections/SkillSection";
+import AchievementSection from "./sections/AchievementSection";
+import ContactSection from "./sections/ContactSection";
 
 export default function Page() {
   const navItems: DockItem[] = [
@@ -14,7 +16,7 @@ export default function Page() {
     { label: "Capstone", href: "#projects", icon: Code2 },
     { label: "Achievements", href: "#awards", icon: Trophy },
     { label: "GitHub", href: "https://github.com/hulomjosuan21", icon: Github },
-    { label: "Contact", href: "mailto:hulomjosuan@gmail.com", icon: Mail },
+    { label: "Contact", href: "#contact", icon: Mail },
   ];
 
   return (
@@ -29,6 +31,12 @@ export default function Page() {
         </section>
         <section id="projects">
           <FeatureProjectSection />
+        </section>
+        <section id="awards">
+          <AchievementSection />
+        </section>
+        <section id="contact">
+          <ContactSection />
         </section>
       </main>
 
