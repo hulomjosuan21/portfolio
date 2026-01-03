@@ -1,5 +1,6 @@
 "use client";
 
+import { Badge } from "@/components/ui/badge";
 import { ArrowUpRight } from "lucide-react";
 
 interface AchievementProps {
@@ -37,12 +38,9 @@ const AchievementItem = ({
     <div className="flex items-center gap-6 w-full md:w-auto justify-between md:justify-end">
       <div className="flex gap-2 flex-wrap">
         {tags.map((tag) => (
-          <span
-            key={tag}
-            className="px-3 py-1 border border-white/20 rounded-full text-[10px] uppercase tracking-wider text-white/60 whitespace-nowrap"
-          >
+          <Badge key={tag} variant={"outline"}>
             {tag}
-          </span>
+          </Badge>
         ))}
       </div>
       <div className="flex items-center gap-4">

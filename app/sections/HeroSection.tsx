@@ -48,7 +48,7 @@ export default function HeroSection() {
           <div className="space-y-4">
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
               Hi, I'm{" "}
-              <span className="text-foreground">
+              <span className="relative inline-block text-foreground">
                 <Highlighter action="box" color="#6e56cf">
                   Josuan.
                 </Highlighter>
@@ -68,17 +68,27 @@ export default function HeroSection() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <Button className="rounded-full px-8 bg-primary text-primary-foreground w-full sm:w-auto">
+            <Button
+              className="rounded-full px-8 bg-primary text-primary-foreground w-full sm:w-auto"
+              onClick={() =>
+                window.open(
+                  "/assets/pdf/JosuanLeonardoHulom_Resume_FullStackDeveloper.pdf",
+                  "_blank"
+                )
+              }
+            >
               <Download className="mr-2 size-4" />
               Download Resume
             </Button>
-            <Button
-              variant="outline"
-              className="rounded-full px-8 border-primary text-primary w-full sm:w-auto"
-            >
-              <MessageSquare className="mr-2 size-4" />
-              Let's Chat
-            </Button>
+            <a href="#contact" className="w-full sm:w-auto">
+              <Button
+                variant="outline"
+                className="rounded-full px-8 border-primary text-primary w-full sm:w-auto hover:bg-primary hover:text-primary-foreground transition-all"
+              >
+                <MessageSquare className="mr-2 size-4" />
+                Let's Chat
+              </Button>
+            </a>
           </div>
         </div>
 

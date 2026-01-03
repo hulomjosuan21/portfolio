@@ -8,8 +8,11 @@ import FeatureProjectSection from "./sections/FeatureProjectSection";
 import SkillSection from "./sections/SkillSection";
 import AchievementSection from "./sections/AchievementSection";
 import ContactSection from "./sections/ContactSection";
+import LoadingScreen from "@/components/LoadingScreen";
+import { useState } from "react";
 
 export default function Page() {
+  const [isLoaded, setIsLoaded] = useState(false);
   const navItems: DockItem[] = [
     { label: "Home", href: "#hero", icon: Home },
     { label: "Skills", href: "#skills", icon: Cpu },
@@ -21,25 +24,30 @@ export default function Page() {
 
   return (
     <div className="relative scroll-smooth">
+      <LoadingScreen onFinished={() => setIsLoaded(true)} />
       <Header />
-      <main className="">
-        <section id="hero">
-          <HeroSection />
-        </section>
-        <section className="skills">
-          <SkillSection />
-        </section>
-        <section id="projects">
-          <FeatureProjectSection />
-        </section>
-        <section id="awards">
-          <AchievementSection />
-        </section>
-        <section id="contact">
-          <ContactSection />
-        </section>
-      </main>
 
+      {isLoaded && (
+        <>
+          <main className="">
+            <section id="hero">
+              <HeroSection />
+            </section>
+            <section id="skills">
+              <SkillSection />
+            </section>
+            <section id="projects">
+              <FeatureProjectSection />
+            </section>
+            <section id="awards">
+              <AchievementSection />
+            </section>
+            <section id="contact">
+              <ContactSection />
+            </section>
+          </main>
+        </>
+      )}
       <div className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50">
         <DockNavigation groups={[navItems]} />
       </div>
